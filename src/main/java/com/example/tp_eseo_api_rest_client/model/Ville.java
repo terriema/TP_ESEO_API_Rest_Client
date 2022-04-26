@@ -6,8 +6,8 @@ import lombok.Data;
 public class Ville {
 
     private String codeINSEE;
-    private String codePostal;
     private String nomCommune;
+    private String codePostal;
     private String libelleAcheminement;
     private String ligne5;
     private String latitude;

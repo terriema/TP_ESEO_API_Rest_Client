@@ -20,8 +20,17 @@ public class AccueilDao {
                 .setHeader("User-Agent", "Java 11 HttpClient Bot")
                 .build();
 
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    }
 
-        return response;
+    public HttpResponse<String> getVilleByCodePostal(String codePostal) throws IOException, InterruptedException {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .GET()
+                .uri(URI.create("http://localhost:8181/ville/"+codePostal))
+                .setHeader("User-Agent", "Java 11 HttpClient Bot")
+                .build();
+
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
 }

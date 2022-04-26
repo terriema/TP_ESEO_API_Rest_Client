@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: terri
@@ -16,11 +17,32 @@
 <div style="height: 10%; background-color: darkseagreen" class="flex items-center justify-center text-6xl font-serif font-bold">
     <h1 style="color: darkgreen">APvIlles</h1>
 </div>
-
-<div class="grid grid-cols-2 divide-x">
-    <div>div 1</div>
-    <div>div 2</div>
+<div style="height: 15%" class="grid grid-cols-2 divide-x">
+    <div class="text-center pt-20 pb-12">
+        <label for="ville1">Choisir une première ville : </label>
+        <select id="ville1" form="villeForm" name="codePostalVille1">
+            <c:forEach items="${listVilles}" var="ville">
+                <option value="${ville.codePostal}">${ville.nomCommune}</option>
+            </c:forEach>
+        </select>
+    </div>
+    <div class="text-center pt-20 pb-12">
+        <label for="ville2">Choisir une deuxième ville : </label>
+        <select id="ville2" form="villeForm" name="codePostalVille2">
+            <c:forEach items="${listVilles}" var="ville">
+                <option value="${ville.codePostal}">${ville.nomCommune}</option>
+            </c:forEach>
+        </select>
+    </div>
 </div>
+<form id="villeForm" class="text-center items-center" method="post" action="accueil">
+    <input type="submit" value="Calculer la distance entre ces 2 villes" style="color: darkgreen; background-color: darkseagreen" class="mt-20 font-bold py-2 px-4 rounded">
+</form>
+<c:if test="${distance != null}">
+    <div class="text-center">
+        <p>La distance entre les 2 villes est de ${distance} km</p>
+    </div>
+</c:if>
 
 </body>
 </html>
