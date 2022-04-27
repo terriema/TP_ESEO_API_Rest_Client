@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.List;
 
-public class AccueilController {
+public class VilleController {
 
     private AccueilDao accueilDao = new AccueilDao();
 

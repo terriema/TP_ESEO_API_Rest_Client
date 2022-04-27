@@ -44,5 +44,11 @@
     </div>
 </c:if>
 
+<div>
+    <a href="listeVilles">
+        <button type="submit" class="mt-20 font-bold py-2 px-4 rounded">Liste des villes</button>
+    </a>
+</div>
+
 </body>
 </html>
