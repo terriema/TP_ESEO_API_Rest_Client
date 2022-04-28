@@ -49,12 +49,12 @@
                     <td><c:out value="${ville.longitude}"/></td>
                     <td>
                         <a href="modifier?ville=${ville.codeINSEE}">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded bg-[darkseagreen] hover:bg-[#638863]">
                                 Modifier
                             </button>
                         </a>
-                        <a href="delete?ville=${ville.codeINSEE}">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <a href="supprimer?ville=${ville.codeINSEE}">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded bg-[darkseagreen] hover:bg-[#638863]">
                                 Supprimer
                             </button>
                         </a>

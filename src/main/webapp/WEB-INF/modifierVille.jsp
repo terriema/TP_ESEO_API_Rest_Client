@@ -17,7 +17,7 @@
 </div>
 
 <div class="mt-10 w-full max-w-xs justify-items-center" style="margin-left: 800px">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="listeVilles">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="modifier">
         <div>
             <label for="nomCommune" class="block text-gray-700 text-sm font-bold mb-2">Nom de la commune</label>
             <input type="text" name="nomCommune" id="nomCommune" value="${ville.nomCommune}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -44,7 +44,7 @@
         </div>
         <input type="hidden" name="codeINSEE" value="${ville.codeINSEE}">
         <div>
-            <input type="submit" value="Modifier la ville" style="color: darkgreen; background-color: darkseagreen" class="mt-6 font-bold py-2 px-4 rounded">
+            <input type="submit" value="Modifier la ville" class="mt-6 font-bold py-2 px-4 rounded text-[darkgreen] bg-[darkseagreen] hover:bg-[#638863] hover:cursor-pointer">
         </div>
     </form>
 </div>

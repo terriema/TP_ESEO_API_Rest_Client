@@ -50,7 +50,15 @@ public class VilleController {
 
     public void updateVille(String codeINSEE, String villeJSON) {
         try {
-            System.out.println(villeDao.updateVilleByCodeINSEE(codeINSEE, villeJSON).body());
+            villeDao.updateVilleByCodeINSEE(codeINSEE, villeJSON);
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteVilleByCodeINSEE(String codeINSEE) {
+        try {
+            villeDao.deleteVilleByCodeINSEE(codeINSEE);
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
         }

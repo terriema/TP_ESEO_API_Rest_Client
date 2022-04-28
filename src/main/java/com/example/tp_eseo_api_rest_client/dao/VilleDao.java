@@ -42,7 +42,16 @@ public class VilleDao {
                 .setHeader("User-Agent", "Java 11 HttpClient Bot")
                 .setHeader("Content-Type", "application/json")
                 .build();
-        System.out.println(villeJSON);
+
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HttpResponse<String> deleteVilleByCodeINSEE(String codeINSEE) throws IOException, InterruptedException {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .DELETE()
+                .uri(URI.create("http://localhost:8181/villes/"+codeINSEE))
+                .build();
 
         return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
