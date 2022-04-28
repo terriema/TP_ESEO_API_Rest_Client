@@ -6,7 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class AccueilDao {
+public class VilleDao {
 
     private static final HttpClient httpClient = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
@@ -23,13 +23,26 @@ public class AccueilDao {
         return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
 
-    public HttpResponse<String> getVilleByCodePostal(String codePostal) throws IOException, InterruptedException {
+    public HttpResponse<String> getVilleByCodeINSEE(String codeINSEE) throws IOException, InterruptedException {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("http://localhost:8181/ville/"+codePostal))
+                .uri(URI.create("http://localhost:8181/ville/"+codeINSEE))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot")
                 .build();
+
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    public HttpResponse<String> updateVilleByCodeINSEE(String codeINSEE, String villeJSON) throws IOException, InterruptedException {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .PUT(HttpRequest.BodyPublishers.ofString(villeJSON))
+                .uri(URI.create("http://localhost:8181/villes/"+codeINSEE))
+                .setHeader("User-Agent", "Java 11 HttpClient Bot")
+                .setHeader("Content-Type", "application/json")
+                .build();
+        System.out.println(villeJSON);
 
         return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }

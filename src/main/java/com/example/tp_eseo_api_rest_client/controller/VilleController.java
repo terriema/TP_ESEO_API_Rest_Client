@@ -1,6 +1,6 @@
 package com.example.tp_eseo_api_rest_client.controller;
 
-import com.example.tp_eseo_api_rest_client.dao.AccueilDao;
+import com.example.tp_eseo_api_rest_client.dao.VilleDao;
 import com.example.tp_eseo_api_rest_client.model.Ville;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,11 +12,11 @@ import java.util.List;
 
 public class VilleController {
 
-    private AccueilDao accueilDao = new AccueilDao();
+    private VilleDao villeDao = new VilleDao();
 
     public List<Ville> getAllVilles() {
         try {
-            String villesJSON = accueilDao.getAllVilles().body();
+            String villesJSON = villeDao.getAllVilles().body();
             JSONArray jsonArray = new JSONArray(villesJSON);
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -30,11 +30,11 @@ public class VilleController {
         return null;
     }
 
-    public Ville getVilleByCodePostal(String codePostal) {
+    public Ville getVilleByCodeINSEE(String codeINSEE) {
         try {
-            String villeJSON = accueilDao.getVilleByCodePostal(codePostal).body();
+            String villeJSON = villeDao.getVilleByCodeINSEE(codeINSEE).body();
             System.out.println(villeJSON);
-            System.out.println(codePostal);
+            System.out.println(codeINSEE);
             JSONArray jsonArray = new JSONArray(villeJSON);
             System.out.println(jsonArray);
             JSONObject jsonObject = jsonArray.getJSONObject(0);
@@ -46,6 +46,14 @@ public class VilleController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void updateVille(String codeINSEE, String villeJSON) {
+        try {
+            System.out.println(villeDao.updateVilleByCodeINSEE(codeINSEE, villeJSON).body());
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public float getDistance(float lat1, float lon1, float lat2, float lon2) {

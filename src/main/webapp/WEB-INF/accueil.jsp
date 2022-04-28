@@ -20,17 +20,17 @@
 <div style="height: 15%" class="grid grid-cols-2 divide-x">
     <div class="text-center pt-20 pb-12">
         <label for="ville1">Choisir une première ville : </label>
-        <select id="ville1" form="villeForm" name="codePostalVille1">
+        <select id="ville1" form="villeForm" name="codeINSEEVille1">
             <c:forEach items="${listVilles}" var="ville">
-                <option value="${ville.codePostal}">${ville.nomCommune}</option>
+                <option value="${ville.codeINSEE}">${ville.nomCommune}</option>
             </c:forEach>
         </select>
     </div>
     <div class="text-center pt-20 pb-12">
         <label for="ville2">Choisir une deuxième ville : </label>
-        <select id="ville2" form="villeForm" name="codePostalVille2">
+        <select id="ville2" form="villeForm" name="codeINSEEVille2">
             <c:forEach items="${listVilles}" var="ville">
-                <option value="${ville.codePostal}">${ville.nomCommune}</option>
+                <option value="${ville.codeINSEE}">${ville.nomCommune}</option>
             </c:forEach>
         </select>
     </div>

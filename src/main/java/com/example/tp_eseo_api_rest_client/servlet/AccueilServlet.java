@@ -25,13 +25,11 @@ public class AccueilServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         VilleController villeController = new VilleController();
 
-        String codePostalVille1 = request.getParameter("codePostalVille1");
-        String codePostalVille2 = request.getParameter("codePostalVille2");
+        String codeINSEEVille1 = request.getParameter("codeINSEEVille1");
+        String codeINSEEVille2 = request.getParameter("codeINSEEVille2");
 
-        System.out.println("codePostalVille1 : " + codePostalVille1);
-
-        Ville ville1 = villeController.getVilleByCodePostal(codePostalVille1);
-        Ville ville2 = villeController.getVilleByCodePostal(codePostalVille2);
+        Ville ville1 = villeController.getVilleByCodeINSEE(codeINSEEVille1);
+        Ville ville2 = villeController.getVilleByCodeINSEE(codeINSEEVille2);
 
         String distance = villeController.getDistance(Float.parseFloat(ville1.getLatitude()), Float.parseFloat(ville1.getLongitude()), Float.parseFloat(ville2.getLatitude()), Float.parseFloat(ville2.getLongitude())) + "";
         request.setAttribute("distance", distance);
