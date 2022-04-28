@@ -55,4 +55,15 @@ public class VilleDao {
 
         return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     }
+
+    public HttpResponse<String> getWeather(String lat, String lon) throws IOException, InterruptedException {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .GET()
+                .uri(URI.create("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=f1a79f226ea959688fd03094b6bf630c&mode=html"))
+                .setHeader("User-Agent", "Java 11 HttpClient Bot")
+                .build();
+
+        return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    }
 }

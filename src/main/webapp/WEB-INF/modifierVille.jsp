@@ -44,7 +44,7 @@
         </div>
         <input type="hidden" name="codeINSEE" value="${ville.codeINSEE}">
         <div>
-            <input type="submit" value="Modifier la ville" class="mt-6 font-bold py-2 px-4 rounded text-[darkgreen] bg-[darkseagreen] hover:bg-[#638863] hover:cursor-pointer">
+            <input type="submit" value="Modifier la ville" class="mt-6 font-bold py-2 px-4 rounded text-white bg-[darkseagreen] hover:bg-[#638863] hover:cursor-pointer">
         </div>
     </form>
 </div>

@@ -64,6 +64,15 @@ public class VilleController {
         }
     }
 
+    public String getWeather(String lat, String lon) {
+        try {
+            return villeDao.getWeather(lat, lon).body();
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public float getDistance(float lat1, float lon1, float lat2, float lon2) {
 
         float radlat1 = (float) (Math.PI * lat1/180);
