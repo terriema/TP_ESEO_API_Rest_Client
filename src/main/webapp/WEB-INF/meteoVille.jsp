@@ -14,7 +14,9 @@
 </head>
 <body>
 <div style="height: 10%; background-color: darkseagreen" class="flex items-center justify-center text-6xl font-serif font-bold">
-    <h1 style="color: darkgreen">APvIlles</h1>
+    <a href="accueil">
+        <h1 style="color: darkgreen">APvIlles</h1>
+    </a>
 </div>
 <div class="text-center pt-20 pb-12">
     <form id="villeForm" method="post" action="meteoVille">

@@ -15,7 +15,9 @@
 <body>
 
 <div style="height: 10%; background-color: darkseagreen" class="flex items-center justify-center text-6xl font-serif font-bold">
-    <h1 style="color: darkgreen">APvIlles</h1>
+    <a href="accueil">
+        <h1 style="color: darkgreen">APvIlles</h1>
+    </a>
 </div>
 <div style="height: 15%" class="grid grid-cols-2 divide-x">
     <div class="text-center pt-20 pb-12">

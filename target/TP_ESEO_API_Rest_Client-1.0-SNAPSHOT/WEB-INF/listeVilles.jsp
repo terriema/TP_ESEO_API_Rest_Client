@@ -18,15 +18,16 @@
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js'></script>
 </head>
 <body>
-<div style="height: 10%; background-color: darkseagreen"
-     class="flex items-center justify-center text-6xl font-serif font-bold">
-    <h1 style="color: darkgreen">APvIlles</h1>
+<div style="height: 10%; background-color: darkseagreen" class="flex items-center justify-center text-6xl font-serif font-bold">
+    <a href="accueil">
+        <h1 style="color: darkgreen">APvIlles</h1>
+    </a>
 </div>
 
 <div class = "container pt-8 pb-8">
     <table id="tableVilles" class="table table-striped table-bordered">
         <thead>
-            <tr>
+            <tr style="background-color: darkseagreen; color: white">
                 <th>Code INSEE</th>
                 <th>Code Postal</th>
                 <th>Nom de la Commune</th>
@@ -91,6 +92,8 @@
                     records: "communes"
                 }
             });
+            document.getElementsByClassName('dynatable-active-page')[0].setAttribute('style', 'background-color: darkseagreen');
+
             var styleSearch = "border: 2px solid darkgreen; border-radius: 3px;";
 
             document.getElementById('dynatable-query-search-tableVilles').setAttribute('style', styleSearch);

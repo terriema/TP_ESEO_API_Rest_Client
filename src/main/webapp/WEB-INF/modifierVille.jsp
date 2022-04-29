@@ -13,7 +13,9 @@
 </head>
 <body>
 <div style="height: 10%; background-color: darkseagreen" class="flex items-center justify-center text-6xl font-serif font-bold">
-    <h1 style="color: darkgreen">APvIlles</h1>
+    <a href="accueil">
+        <h1 style="color: darkgreen">APvIlles</h1>
+    </a>
 </div>
 
 <div class="mt-10 w-full max-w-xs justify-items-center" style="margin-left: 800px">
